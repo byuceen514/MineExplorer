@@ -14,18 +14,16 @@
 
 {% block app_navigation_items %}
   <li class="title">App Navigation</li>
-  <li class="active"><a href="">Home</a></li>
-  <li><a href="">Jobs</a></li>
-  <li><a href="">Results</a></li>
-  <li class="title">Steps</li>
-  <li><a href="">1. The First Step</a></li>
-  <li><a href="">2. The Second Step</a></li>
-  <li><a href="">3. The Third Step</a></li>
-  <li class="separator"></li>
-  <li><a href="">Get Started</a></li>
+  <li class="active"><a href="{% url 'mineexplorer:home' %}">Home</a></li>
+  <li><a href="{% url 'mineexplorer:user_documentation' %}">User Documentation</a></li>
+  <li><a href="{% url 'mineexplorer:help_file' %}">Help File</a></li>
+  <li><a href="{% url 'mineexplorer:area' %}">Map</a></li>
+
 {% endblock %}
 
 {% block app_content %}
+
+
 {% endblock %}
 
 {% block app_actions %}
@@ -33,12 +31,12 @@
 
 {% block content_dependent_styles %}
   {{ block.super }}
-  <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
+  <!--<link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">-->
   <link href="{% static 'mineexplorer/css/main.css' %}" rel="stylesheet"/>
 {% endblock %}
 
 {% block scripts %}
   {{ block.super }}
-  <script src="https://js.arcgis.com/3.16/"></script>
+  <!--<script src="https://js.arcgis.com/3.16/"></script>-->
   <script src="{% static 'mineexplorer/js/main.js' %}" type="text/javascript"></script>
 {% endblock %}

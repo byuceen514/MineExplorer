@@ -1,0 +1,14 @@
+{% extends "mineexplorer/base.html" %}
+
+{% block app_navigation_items %}
+  <li class="title">App Navigation</li>
+  <li><a href="{% url 'mineexplorer:home' %}">Home</a></li>
+  <li class="active"><a href="{% url 'mineexplorer:user_documentation' %}">User Documentation</a></li>
+  <li><a href="{% url 'mineexplorer:help_file' %}">Help File</a></li>
+  <li><a href="{% url 'mineexplorer:area' %}">Map</a></li>
+{% endblock %}
+
+{% block app_content %}
+  <h1>How much money do you have, sir?</h1>
+  <h2>Too much!</h2>
+{% endblock %}
