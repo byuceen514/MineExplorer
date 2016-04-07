@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from tethys_sdk.gizmos import TextInput,Button
+
 
 
 @login_required()
@@ -15,6 +17,7 @@ def area(request):
     """
     Controller for the app home page.
     """
+
     context = {}
 
     return render(request, 'mineexplorer/area.html', context)
