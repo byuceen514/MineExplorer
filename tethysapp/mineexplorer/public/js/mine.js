@@ -12,11 +12,12 @@ var map, toolbar, symbol, geomTask,app;
         "esri/tasks/Geoprocessor",
         "esri/tasks/FeatureSet",
         "esri/tasks/LinearUnit",
-        "dijit/form/Button", "dijit/WidgetSet", "dojo/domReady!"
+        "dijit/form/Button", "dijit/WidgetSet", "dojo/domReady!",
+        "esri/request"
       ], function(
         Map, Draw, Graphic,
         SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol,
-        parser, registry,graphicsUtils,Geoprocessor,FeatureSet,LinearUnit,Button
+        parser, registry,graphicsUtils,Geoprocessor,FeatureSet,LinearUnit,Button,esriRequest
       ) {
         parser.parse();
         var featureSet = new FeatureSet();
@@ -81,13 +82,16 @@ var map, toolbar, symbol, geomTask,app;
 
         var elevation = document.getElementById("elevation").value;
         if(elevation==""){
-        alert("Enter an Effin Value");
+        alert("Please enter a value for the height!");
         }
+
         var params = {
         "Plane_Height": elevation,
         "Area": featureSet
         }
+
         gp.submitJob(params, completeCallback, statusCallback);
+
         }
 
         function statusCallback(jobInfo) {
@@ -96,8 +100,33 @@ var map, toolbar, symbol, geomTask,app;
 
           function completeCallback(jobInfo) {
             console.log("getting data");
-            
+
+            gp.getResultImageLayer(jobInfo.jobId, "rastercalc", null, function (layer) {
+            layer.setOpacity(0.99);
+            map.addLayers([layer]);
+            gp.getResultData(jobInfo.jobId, "Volume_txt", getVolume);
+            });
+
           }
 
+        //sends request to get volume text file from server
+        function getVolume(Volume_txt) {
+            var req = esriRequest({
+                "url": Volume_txt.value.url,
+                "handleAs": "text"
+            });
+            req.then(requestSucceeded, requestFailed);
+        }
+
+        //manipulates text dile and adds total volume to app on successful text file request
+        function requestSucceeded(response){
+            var elem = response.split(",");
+            var volNumber = Number(elem[elem.length - 1]).toFixed(2);
+            $("#vol").html(
+                "<h6>Total Volume:</h6>" +
+                "<p class='bg-primary'> <span id='volBlue'>" +
+            volNumber + "</span> Cubic Meters</p>"
+            );
+        }
 
       });

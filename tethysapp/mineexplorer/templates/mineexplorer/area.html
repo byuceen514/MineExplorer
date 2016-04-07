@@ -8,11 +8,11 @@
   <li ><a href="{% url 'mineexplorer:user_documentation' %}">User Documentation</a></li>
   <li><a href="{% url 'mineexplorer:help_file' %}">Help File</a></li>
   <li class="active"><a href="{% url 'mineexplorer:area' %}">Map</a></li><br/>
-<li>Click The button below to draw the damn polygon</li>
-<li><button data-dojo-type="dijit/form/Button">Polygon</button></li>
-<li>Enter Elevation (in meters) manually in the box below.</li>
-<input type="number" id="elevation" value="1750"/><br/>
-<li><button type="button" id="calc">Click me to compute crap</button></li>
+  <li>Click The button below to draw a polygon</li>
+  <li><button data-dojo-type="dijit/form/Button">Polygon</button></li>
+  <li>Enter Elevation (in meters) manually in the box below.</li>
+  <input type="number" id="elevation" value="1750"/><br/>
+  <li><button type="button" id="calc">Click here to compute the volume</button></li>
 
 
 {% endblock %}
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://js.arcgis.com/3.16/dijit/themes/nihilo/nihilo.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
     <style>
-      html, body, #mainWindow {
+      html, body, #map, #mainWindow {
         font-family: sans-serif;
         height: 100%;
         width: 100%;
