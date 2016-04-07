@@ -8,11 +8,11 @@ class Mineexplorer(TethysAppBase):
 
     name = 'MineExplorer'
     index = 'mineexplorer:home'
-    icon = 'mineexplorer/images/icon.gif'
+    icon = 'mineexplorer/images/mine.png'
     package = 'mineexplorer'
     root_url = 'mineexplorer'
     color = '#3498db'
-    description = 'Place a brief description of your app here.'
+    description = 'Calculate the volume of land to be removed and create a new DEM by selecting a plane height elevation to cut at.'
     enable_feedback = False
     feedback_emails = []
 

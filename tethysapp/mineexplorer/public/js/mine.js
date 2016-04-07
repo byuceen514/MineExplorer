@@ -12,8 +12,8 @@ var map, toolbar, symbol, geomTask,app;
         "esri/tasks/Geoprocessor",
         "esri/tasks/FeatureSet",
         "esri/tasks/LinearUnit",
-        "dijit/form/Button", "dijit/WidgetSet", "dojo/domReady!",
-        "esri/request"
+        "dijit/form/Button", "esri/request","dijit/WidgetSet", "dojo/domReady!"
+
       ], function(
         Map, Draw, Graphic,
         SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol,
@@ -42,7 +42,7 @@ var map, toolbar, symbol, geomTask,app;
         });
 
         function activateTool() {
-        map.graphics.clear();
+            map.graphics.clear();
           var tool = this.label.toUpperCase().replace(/ /g, "_");
           toolbar.activate(Draw[tool]);
           map.hideZoomSlider();
@@ -96,6 +96,13 @@ var map, toolbar, symbol, geomTask,app;
 
         function statusCallback(jobInfo) {
             console.log(jobInfo.jobStatus);
+            if (jobInfo.jobStatus === "esriJobSubmitted") {
+              $("#volstatus").html("<h7 style='color:blue'><b>Job submitted...</b></h7>");
+            } else if (jobInfo.jobStatus === "esriJobExecuting") {
+                $("#volstatus").html("<h7 style='color:red;'><b>Calculating...</b></h7>");
+            } else if (jobInfo.jobStatus === "esriJobSucceeded") {
+                $("#volstatus").html("<h7 style='color:green;'><b>Success!</b></h7>");
+            }
           }
 
           function completeCallback(jobInfo) {
@@ -115,16 +122,19 @@ var map, toolbar, symbol, geomTask,app;
                 "url": Volume_txt.value.url,
                 "handleAs": "text"
             });
-            req.then(requestSucceeded, requestFailed);
+            req.then(requestSucceeded);
         }
 
         //manipulates text dile and adds total volume to app on successful text file request
         function requestSucceeded(response){
+
             var elem = response.split(",");
+
             var volNumber = Number(elem[elem.length - 1]).toFixed(2);
-            $("#vol").html(
+
+            $("#volume").html(
                 "<h6>Total Volume:</h6>" +
-                "<p class='bg-primary'> <span id='volBlue'>" +
+                "<p> <span id='volBlue'>" +
             volNumber + "</span> Cubic Meters</p>"
             );
         }

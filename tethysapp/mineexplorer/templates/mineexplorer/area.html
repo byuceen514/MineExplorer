@@ -11,8 +11,12 @@
   <li>Click The button below to draw a polygon</li>
   <li><button data-dojo-type="dijit/form/Button">Polygon</button></li>
   <li>Enter Elevation (in meters) manually in the box below.</li>
-  <input type="number" id="elevation" value="1750"/><br/>
+  <li><input type="number" id="elevation" value="1750"/></li>
   <li><button type="button" id="calc">Click here to compute the volume</button></li>
+  <div id="statusDiv">
+    <p id="volstatus"></p>
+  </div>
+  <div id="volume"></div>
 
 
 {% endblock %}

@@ -9,6 +9,42 @@
 {% endblock %}
 
 {% block app_content %}
-  <h1>How much money do you have, sir?</h1>
-  <h2>Too much!</h2>
+<style>
+  p  {
+  width: 950px;
+}
+</style>
+  <h1>Help File</h1>
+  <h4>Purpose</h4>
+<p>The purpose of Mountain Top Mining Explorer is to provide a map that allows the user to select a possible mining location in southeastern Idaho and a proposed elevation for a mining cut. The Mining Explorer App then computes the volume of material to be removed and creates an updated DEM showing the cut. Large efforts were made to make this app user friendly. </p>
+<p>This app was created to fulfill a project assignment in the GIS Programming for Engineers Class taught by Dr. Ames at Brigham Young University. </p>
+<h4>Required Software</h4>
+<h5>Tethys</h5>
+<p>Tethys is a framework to build web apps. It runs on Linux and requires the installation of many dependencies before it can run. For more information about how to install Tethys go to: <a href="http://docs.tethysplatform.org/en/latest/installation.html" target="_blank">http://docs.tethysplatform.org/en/latest/installation.html</a>.</p>
+<h5>Virtual Box</h5>
+<p>A workaround to be able to install Tethys without a Linux machine is to create a virtual machine that runs Linux. The following link has information about how to download and install a virtual machine using oracle’s VirtualBox: <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">https://www.virtualbox.org/wiki/Downloads</a>.</p>
+<h5>Compatible Web Browsers</h5>
+<p>This app uses basic HTML, CSS, and JavaScript code. Mining Explorer had been tested and found compatible in Firefox and Google Chrome. </p>
+<h5>ArcMap 10.3</h5>
+<p>ArcMap was used to create the initial model. Once the model was completed it was uploaded to the BYU GIS Server so that it could be pulled into the Tethys app. </p>
+<h5>Coding Interface</h5>
+<p>Pycharm was the coding interface used to write the code. However other coding interfaces are available and can be used. </p>
+<h4>Required Input Data</h4>
+<p>All of the data needed to create Mining Explorer can be found at gis.utah.gov. The data used was the Idaho DEM. </p>
+<h4>Configuring the Data</h4>
+<p>The DEM file has been previously inserted into the Mining Explorer App. All that the user needs to import is the location and the desired elevation of the cut. </p>
+<h4>Restrictions</h4>
+<p>The geospatial data seen in this app was downloaded from the AGRC website. This website is not intended to be a comprehensive or even accurate description of mountain top mining. Rather, this is a limited collection of selected events with incomplete and possibly incorrect information. </p>
+<h4>Using the App</h4>
+<h5>Menu</h5>
+<p>The menu is located at the left-hand side of the page. And contains the links: Home, Map, Help File, and Design Documentation. Below is a description of each page. </p>
+<h5>Home</h5>
+<p>The Home page briefly discusses the purpose of the site, what it contains, and how to navigate through the website. </p>
+<h5>Map</h5>
+<p>The map allows the user to draw a polygon around a desired mining location. It then prompts the user to input a cut elevation. Following these steps it outputs an updated DEM showing the cut. </p>
+<h5>Help File</h5>
+<p>This page contains end user documentation.</p>
+<h5>Design Documentation</h5>
+<p>This page contains software design documentation. It explains technical specifications and software design. </p>
+
 {% endblock %}
