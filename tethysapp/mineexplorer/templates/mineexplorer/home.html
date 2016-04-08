@@ -1,8 +1,20 @@
 {% extends "mineexplorer/base.html" %}
 
 {% block app_content %}
+<style>
+  p  {
+  width: 1100px;
+}
+</style>
   <h1>Welcome!</h1>
-  <p>Congratulations on creating a new Tethys app!</p>
+  <p>This Tethys App allows the user to select a possible mining location in southeastern Idaho and a proposed elevation for a mining cut. The Mining Explorer App then computes the volume of material to be removed and creates an updated DEM showing the cut.</p>
+  <p>The navigation buttons on the left-hand side of the page will guide you to the map, a help file, and technical and design documentation.<p>
+
+  <img src="http://www.mining.com/wp-content/uploads/2012/06/Mir-Mine-from-alrosas-site.jpg" width="500" height="300">
+
+  <p> Figure 1: Mir Diamond Mine located in Russia.<p>
+  <img src="/static/mineexplorer/images/DEMLocation.JPG"width="500" height="500">
+  <p>Figure 2: The Mining Explorer App works for southeastern Idaho.<p>
   <!--<div id="map"></div>-->
 {% endblock %}
 

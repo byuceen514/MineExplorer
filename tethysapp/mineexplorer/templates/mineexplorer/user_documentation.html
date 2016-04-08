@@ -9,6 +9,49 @@
 {% endblock %}
 
 {% block app_content %}
-  <h1>How much money do you have, sir?</h1>
-  <h2>Too much!</h2>
+ <style>
+  p  {
+  width: 1100px;
+}
+</style>
+  <h1>User Documentation and Technical Specifications</h1>
+  <h3>Software Details</h3>
+  <p>This app was built for the purpose of creating an online map that allows the input of a site location and the elevation of a proposed mining cut and creates an updated DEM showing the cut. The app was created in the Tethys Platform using html, CSS, and JavaScript by Christian Kesler and Ashley Hunt.</p>
+  <h3>Compatibility and Limitations</h3>
+  <p>This features of this app best function in Google Chrome and Mozilla Firefox. As such, the app should be viewed in either of these browsers. The program does not guarantee to work on every device. Tethys platform runs on Linux and requires many dependencies. For information about how to install Tethys refer to this website: <a href="http://docs.tethysplatform.org/en/latest/installation.html">http://docs.tethysplatform.org/en/latest/installation.html</a>. For other issues or troubleshooting assistance, please contact Christian (christiankesler11@gmail.com) or Ashley (lashleyhunt@gmail.com).</p>
+  <h3>License</h3>
+  <p>Impounded Waters in Utah by Christian Kesler & Ashley Hunt is licensed under MIT – Open for public use. Tethys is licensed under the BSD 2-clause license <a href="https://www.tldrlegal.com/l/freebsd">https://www.tldrlegal.com/l/freebsd</a>.</p>
+  <h1>Website Design</h1>
+  <h3>Purpose of Design</h3>
+  <p>The purpose of this app is create an updated DEM based on a proposed mining cut. We first needed to add a base map to our app so that any features added to the map would have a visual location. Next, we imported all the necessary data files into ArcMap 10.3 and created a working model. We were then able to upload our model to the server and then load it into our Tethys app. After the data was imported, the code was adjusted for formatting. The coding was done in Pycharm and the final map showing an updated DEM is located in the figure below. </p>
+  <h3>Menu & Interface Elements</h3>
+  <p>The program is formatted for convenience for users to easily access the map and to navigate through the app. The map can be accessed from the home page through the menu at the left-hand side of the page. The layout of the home page including the menu items can be seen in the figure below.</p>
+  <img src="/static/mineexplorer/images/menu_map.JPG"width="250" height="500">
+  <p>The home page informs the user of the purpose of the app. The User Documentation page explains key functions and uses of the app. Lastly, the Help File gives important technical information about the tool.</p>
+  <p>Under the Map tab there are three steps. Step 1 allows the user the draw a polygon on the map by clicking on the polygon button. </p>
+  <img src="/static/mineexplorer/images/polygon.JPG"width="625" height="375">
+  <p>In Step 2 the user inputs the desired height at which to cut the land (meters).
+  And in Step 3 the user clicks the ‘Click here to compute volume’ button to run the app.</p>
+  <img src="/static/mineexplorer/images/volume_dem.JPG"width="625" height="375">
+  <h3>Main Files</h3>
+  <p>For this app the data was organized into html and JavaScript files. </p>
+  <h3>Code Structure</h3>
+  <p>The code follows Tethys model structure as can be seen below in the model. </p>
+  <img src="/static/mineexplorer/images/model.JPG">
+  <h3>Key Functions</h3>
+  <p>The following table contains all of the functions in the app’s code. The right column indicates the key functions and the left column briefly explains their role in the code. </p>
+  <p>Map – allows for the use of a map with adjustable zoom and centering</p>
+  <p>SimpleLineSymbol – drew lines that were able to be closed into a polygon</p>
+  <p>SimpleFillSymbol – filled the polygon with a color so that it was easy to see</p>
+  <p>Geoproscessor – linked to the tool on geoserver.byu.edu</p>
+  <p>Button – created a button to click on that runs the app</p>
+  <p>esriRequest – used to grab the volume from a text file</p>
+  <p>clear – erased the old polygon when the create polygon button was clicked on again</p>
+  <p>If there are any more questions regarding the structure of the code or about the code itself, feel free to contact either Christian or Ashley at the listed email address above.</p>
+
+
+
+
+  </html>
+
 {% endblock %}
