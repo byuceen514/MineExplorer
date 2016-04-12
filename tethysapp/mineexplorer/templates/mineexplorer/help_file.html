@@ -3,9 +3,9 @@
 {% block app_navigation_items %}
   <li class="title">App Navigation</li>
   <li><a href="{% url 'mineexplorer:home' %}">Home</a></li>
+  <li><a href="{% url 'mineexplorer:area' %}">Map</a></li>
   <li><a href="{% url 'mineexplorer:user_documentation' %}">User Documentation</a></li>
   <li class="active"><a href="{% url 'mineexplorer:help_file' %}">Help File</a></li>
-  <li><a href="{% url 'mineexplorer:area' %}">Map</a></li>
 {% endblock %}
 
 {% block app_content %}
@@ -27,8 +27,11 @@
 <p>This app uses basic HTML, CSS, and JavaScript code. Mining Explorer had been tested and found compatible in Firefox and Google Chrome. </p>
 <h5>ArcMap 10.3</h5>
 <p>ArcMap was used to create the initial model. Once the model was completed it was uploaded to the BYU GIS Server so that it could be pulled into the Tethys app. </p>
+<h5>Geoserver</h5>
+<p>An ArcMap tool was first made that ran the functions of the tool. This tool was then uploaded to <a href="http://geoserver.byu.edu/arcgis/rest/services/MineExplorer" target="_blank">http://geoserver.byu.edu/arcgis/rest/services/MineExplorer</a>. Please view the website for more information about how the tool runs.</p>
 <h5>Coding Interface</h5>
 <p>Pycharm was the coding interface used to write the code. However other coding interfaces are available and can be used. </p>
+<p>The code is accesible for viewing in GitHub at <a href="https://github.com/byuceen514/MineExplorer.git" target="_blank">https://github.com/byuceen514/MineExplorer.git</a>.</p>
 <h4>Required Input Data</h4>
 <p>All of the data needed to create Mining Explorer can be found at gis.utah.gov. The data used was the Idaho DEM. </p>
 <h4>Configuring the Data</h4>

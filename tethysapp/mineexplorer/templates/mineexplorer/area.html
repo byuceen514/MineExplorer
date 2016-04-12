@@ -5,8 +5,7 @@
 {% block app_navigation_items %}
   <li class="title">App Navigation</li>
   <li><a href="{% url 'mineexplorer:home' %}">Home</a></li>
-  <li ><a href="{% url 'mineexplorer:user_documentation' %}">User Documentation</a></li>
-  <li><a href="{% url 'mineexplorer:help_file' %}">Help File</a></li>
+
   <li class="active"><a href="{% url 'mineexplorer:area' %}">Map</a></li><br/>
   <li><h5>Step 1</h5></li>
   <li>Click The button below to draw a polygon</li>
@@ -20,6 +19,8 @@
     <p id="volstatus"></p>
   </div>
   <div id="volume"></div>
+  <li ><a href="{% url 'mineexplorer:user_documentation' %}">User Documentation</a></li>
+  <li><a href="{% url 'mineexplorer:help_file' %}">Help File</a></li>
 
 
 {% endblock %}

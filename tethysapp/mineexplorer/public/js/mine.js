@@ -134,7 +134,7 @@ var map, toolbar, symbol, geomTask,app;
 
             $("#volume").html(
                 "<h6>Total Volume:</h6>" +
-                "<p> <span id='volBlue'>" +
+                "<p> <span id='volRed'>" +
             volNumber + "</span> Cubic Meters</p>"
             );
         }
